@@ -1,9 +1,8 @@
-#include <stdlib.h>
 #include "lists.h"
-#include <stdio.h>
+
 
 /**
- * int check_cycle - check for cycle
+ * check_cycle - check for cycle
  * @listint_t: linked list
  * Description: Checks if linked last has a loop cycle
  * Return: 0 on no cycle, 1 on cycle.
@@ -26,7 +25,6 @@ int check_cycle(listint_t *list) {
     if (head == node) {
       return 1;
     }
-
   }
   return 0;
 }
