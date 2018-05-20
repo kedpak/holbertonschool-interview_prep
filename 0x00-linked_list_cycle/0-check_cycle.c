@@ -17,7 +17,7 @@ int check_cycle(listint_t *list) {
   listint_t *node = head->next;
 
   while(node != NULL) {
-    head = head->next;
+
     if (node->next == NULL) {
       return 0;
     }
@@ -25,6 +25,7 @@ int check_cycle(listint_t *list) {
     if (head == node) {
       return 1;
     }
+    head = head->next;
   }
   return 0;
 }
