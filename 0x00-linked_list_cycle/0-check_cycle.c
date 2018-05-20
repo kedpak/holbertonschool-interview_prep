@@ -16,13 +16,11 @@ int check_cycle(listint_t *list) {
   listint_t *head = list;
   listint_t *node = list;
 
-  while(node != NULL) {
+  while(node != NULL && head != NULL && node->next != NULL) {
 
-    node = node->next;
-    if (node != NULL) {
-      node = node->next;
-      head = head->next;
-    }
+    head = head->next;
+    node = node->next->next;
+    
     if (head == node) {
       return 1;
     }
