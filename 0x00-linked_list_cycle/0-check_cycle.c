@@ -3,7 +3,7 @@
 
 /**
  * check_cycle - check for cycle
- * @listint_t: linked list
+ * @list: linked list
  * Description: Checks if linked last has a loop cycle
  * Return: 0 on no cycle, 1 on cycle.
  */
