@@ -14,18 +14,18 @@ int check_cycle(listint_t *list) {
   }
 
   listint_t *head = list;
-  listint_t *node = head->next;
+  listint_t *node = list;
 
   while(node != NULL) {
 
-    if (node->next == NULL) {
-      return 0;
+    node = node->next;
+    if (node != NULL) {
+      node = node->next;
+      head = head->next;
     }
-    node = node->next->next;
     if (head == node) {
       return 1;
     }
-    head = head->next;
   }
   return 0;
 }
