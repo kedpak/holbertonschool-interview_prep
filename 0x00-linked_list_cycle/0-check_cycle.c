@@ -9,23 +9,24 @@
  * Return: 0 on no cycle, 1 on cycle.
  */
 int check_cycle(listint_t *list) {
-  
-  char **arr = malloc(sizeof(char*) * 100);
-  int m = 0;
 
-  while(list != NULL)
-    {
+  if (list == NULL) {
+    return 0;
+  }
 
-      for(unsigned long int i = 0; i < sizeof(arr); i++) {
-	
-	if (arr[i] == (void *)list) {
-	  return 1;
-	}
-      }
-      arr[m] = (void *)list;
-      m++;
-      printf("%s", arr[0]);
-      list = list->next;
+  listint_t *head = list;
+  listint_t *node = head->next;
+
+  while(node != NULL) {
+    head = head->next;
+    if (node->next == NULL) {
+      return 0;
     }
+    node = node->next->next;
+    if (head == node) {
+      return 1;
+    }
+
+  }
   return 0;
 }
