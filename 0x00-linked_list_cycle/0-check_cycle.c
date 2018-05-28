@@ -1,4 +1,6 @@
 #include "lists.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 
 /**
@@ -13,8 +15,11 @@ int check_cycle(listint_t *list)
   if (list == NULL)
     return (0);
 
-  listint_t *head = list;
-  listint_t *node = list;
+  listint_t *head;
+  listint_t *node;
+
+  head = list;
+  node = list;
 
   while (node != NULL && node->next != NULL)
     {
