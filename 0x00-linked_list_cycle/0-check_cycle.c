@@ -11,10 +11,6 @@
  */
 int check_cycle(listint_t *list)
 {
-
-  if (list == NULL)
-    return (0);
-
   listint_t *head;
   listint_t *node;
 
